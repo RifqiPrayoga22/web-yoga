@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan Materi OOP Dart - Rifqi Prayoga</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+.header h1 {
+    color: white;
+    margin: 0;
+}
+
+pre {
+    background-color: #1e1e1e;
+    color: #00ff88;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>LAPORAN OBJECT ORIENTED PROGRAMMING (OOP)</h1>
+<p>Nama: Rifqi Prayoga</p>
+<p>NIM: 251410005</p>
+</div>
+
+<div class="section">
+<h2>1. Pengertian OOP</h2>
+<p>
+Object Oriented Programming (OOP) adalah paradigma pemrograman yang berorientasi pada objek.
+Objek dibuat dari sebuah kelas (class) yang berisi atribut (data) dan method (fungsi).
+</p>
+</div>
+
+<div class="section">
+<h2>2. Perbedaan Kelas dan Objek</h2>
+<p><strong>Kelas (Class)</strong> adalah blueprint atau cetak biru untuk membuat objek. 
+Kelas mendefinisikan atribut (data) dan metode (perilaku).</p>
+
+<p><strong>Objek (Object)</strong> adalah instance (wujud nyata) dari kelas. 
+Objek memiliki nilai nyata untuk atribut dan dapat menjalankan metode.</p>
+
+<p>Contoh:</p>
+<ul>
+<li>Hewan = kelas</li>
+<li>Kucing, Anjing = objek</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>3. Tiga Keuntungan OOP</h2>
+<ul>
+<li><strong>Reusability:</strong> Kode dapat digunakan kembali melalui pewarisan.</li>
+<li><strong>Encapsulation:</strong> Data lebih aman karena dibatasi aksesnya.</li>
+<li><strong>Modularity:</strong> Program lebih terstruktur dan mudah dikelola.</li>
+</ul>
+
+<p>Manfaat tambahan:</p>
+<ul>
+<li>Mudah dikembangkan</li>
+<li>Lebih mudah debugging</li>
+<li>Cocok untuk program besar</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>4. Contoh Class dan Object (Dart)</h2>
+
+<pre><code>
+class Car {
+  String model;
+
+  Car(this.model);
+
+  void start() {
+    print("Mobil $model dinyalakan!");
+  }
+}
+
+void main() {
+  var mobil = Car("Toyota");
+  mobil.start();
+}
+</code></pre>
+
+</div>
+
+<div class="section">
+<h2>5. Constructor & Validasi</h2>
+
+<pre><code>
+class Mahasiswa {
+  String nama;
+  String nim;
+  double ipk;
+
+  Mahasiswa(this.nama, this.nim, this.ipk) {
+    if (ipk < 0.0 || ipk > 4.0) {
+      throw ArgumentError("IPK harus 0.0 - 4.0");
+    }
+  }
+}
+</code></pre>
+
+</div>
+
+<div class="section">
+<h2>6. Encapsulation</h2>
+
+<pre><code>
+class Person {
+  String _name;
+  int age;
+
+  Person(this._name, this.age);
+
+  String get name => _name;
+  set name(String value) => _name = value;
+}
+</code></pre>
+
+</div>
+
+<div class="section">
+<h2>7. Contoh Kelas Hewan</h2>
+
+<pre><code>
+class Hewan {
+  String nama;
+
+  Hewan(this.nama);
+
+  void bersuara() {
+    print("$nama mengeluarkan suara!");
+  }
+}
+
+void main() {
+  var kucing = Hewan("Kucing");
+  kucing.bersuara();
+}
+</code></pre>
+
+</div>
+
+<div class="section">
+<h2>Diskusi: Kapan Menggunakan OOP?</h2>
+<p>
+OOP sebaiknya digunakan ketika membuat program yang cukup besar atau kompleks, 
+misalnya aplikasi sekolah, toko online, atau game.
+OOP sangat cocok karena konsepnya meniru objek di dunia nyata 
+sehingga memudahkan pengelolaan entitas seperti pengguna atau produk.
+</p>
+</div>
+
+<div class="section">
+<h2>Kesimpulan</h2>
+<p>
+OOP mempermudah pengelolaan program besar karena kode lebih terstruktur,
+mudah dikembangkan, dan lebih aman melalui konsep enkapsulasi.
+</p>
+</div>
+
+<div class="footer">
+&copy; 2026 Rifqi Prayoga - Laporan Materi OOP Dart
+</div>
+
+</div>
+
+</body>
+</html>

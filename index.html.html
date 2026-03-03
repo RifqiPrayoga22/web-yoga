@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Materi OOP Dart - Rifqi Prayoga</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .header h1 { color: white; margin: 0; }
+        .section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #00ff88;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .badge {
+            background: #007bff;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>LAPORAN OBJECT ORIENTED PROGRAMMING (OOP)</h1>
+        <p>Nama: Rifqi Prayoga | NIM: 251410005 </p>
+    </div>
+
+    <div class="section">
+        <h2>1. Pengertian OOP</h2>
+        <p>
+            Object Oriented Programming (OOP) adalah paradigma pemrograman yang berorientasi pada objek. 
+            Objek dibuat dari sebuah kelas (class) yang berisi atribut (data) dan method (fungsi).
+        </p>
+        <p>Konsep utama OOP meliputi:</p>
+        <ul>
+            <li>Class dan Object</li>
+            <li>Encapsulation (Enkapsulasi)</li>
+            <li>Constructor</li>
+            <li>Method</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. Class & Object</h2>
+        <p>Kelas (class) adalah blueprint atau cetak biru untuk membuat objek, sedangkan objek (object) adalah instance atau wujud nyata dari kelas tersebut[cite: 10, 11].</p>
+        <pre><code>class Car {
+  String? model;
+  String? color;
+
+  void start() {
+    print('Mobil $model berwarna $color dinyalakan!');
+  }
+}
+
+void main() {
+  var mobil = Car();
+  mobil.model = "Toyota";
+  mobil.color = "Hitam";
+  mobil.start();
+}</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>3. Constructor & Validasi</h2>
+        <p>Constructor digunakan untuk menginisialisasi nilai atribut saat objek dibuat. Validasi dalam constructor memastikan data yang dimasukkan memenuhi kriteria tertentu.</p>
+        <pre><code>class Mahasiswa {
+  String nama;
+  double ipk;
+
+  Mahasiswa(this.nama, this.ipk) {
+    if (ipk < 0.0 || ipk > 4.0) {
+      throw ArgumentError("IPK harus berada dalam rentang 0.0 - 4.0");
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>4. Encapsulation (Enkapsulasi)</h2>
+        <p>Enkapsulasi membatasi akses langsung ke atribut menggunakan setter dan getter agar data lebih aman.</p>
+        <pre><code>class Person {
+  String _name; // Private attribute
+  int age;
+
+  Person(this._name, this.age);
+
+  String get name => _name;
+  set name(String value) => _name = value;
+}</code></pre>
+    </div>
+
+    <div class="section">
+        <span class="badge">Jawaban Tugas Pemrograman 2</span>
+        <h2>5. Perbedaan Kelas & Objek serta Keuntungan OOP</h2>
+        <p><b>Perbedaan Utama:</b></p>
+        <ul>
+            <li><b>Kelas:</b> Cetak biru yang mendefinisikan atribut (data) dan metode (perilaku)[cite: 10]. Contoh: Kelas <i>Hewan</i>[cite: 13].</li>
+            <li><b>Objek:</b> Instance nyata yang memiliki nilai atribut dan menjalankan metode[cite: 11]. Contoh: <i>kucing, anjing</i>[cite: 14].</li>
+        </ul>
+        <p><b>Keuntungan OOP:</b></p>
+        <ul>
+            <li><b>Reusability:</b> Kode dapat digunakan kembali melalui pewarisan[cite: 16].</li>
+            <li><b>Encapsulation:</b> Data lebih aman karena dibatasi aksesnya[cite: 17].</li>
+            <li><b>Modularity:</b> Program dibagi menjadi bagian kecil sehingga mudah dikelola[cite: 18].</li>
+            <li>Manfaat tambahan: Lebih mudah dikembangkan, debugging lebih mudah, dan cocok untuk program besar[cite: 19, 20, 21, 22].</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>6. Contoh Implementasi Kelas Hewan (Dart)</h2>
+        <p>Berikut adalah implementasi kelas Hewan (dikonversi dari contoh Python ke Dart sesuai tema laporan)[cite: 23, 24]:</p>
+        <pre><code>class Hewan {
+  String nama;
+  Hewan(this.nama);
+
+  void bersuara() {
+    print("$nama mengeluarkan suara!");
+  }
+}
+
+void main() {
+  var kucing = Hewan("Kucing");
+  kucing.bersuara();
+}</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>7. Diskusi Terbuka: Kapan Menggunakan OOP?</h2>
+        <p>
+            OOP sebaiknya digunakan saat membangun program yang cukup besar atau kompleks, seperti aplikasi sekolah, toko online, atau game[cite: 34]. 
+            OOP sangat cocok karena konsepnya meniru objek di dunia nyata, memudahkan pengelolaan entitas seperti pengguna atau produk[cite: 35].
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Kesimpulan</h2>
+        <p>
+            OOP mempermudah pengelolaan program besar karena kode lebih terstruktur, mudah dikembangkan, dan lebih aman melalui konsep enkapsulasi.
+        </p>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Rifqi Prayoga - Laporan Materi OOP Dart
+    </div>
+</div>
+
+</body>
+</html>
